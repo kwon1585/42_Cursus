@@ -1,18 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   memset.c                                           :+:      :+:    :+:   */
+/*   strlcpy.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dokwon <dokwon@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/04 00:53:23 by dokwon            #+#    #+#             */
-/*   Updated: 2021/05/05 16:51:10 by dokwon           ###   ########.fr       */
+/*   Created: 2021/05/05 14:38:14 by dokwon            #+#    #+#             */
+/*   Updated: 2021/05/05 14:38:38 by dokwon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memset(void *b, int c, size_t len)
+#include "libft.h"
+
+unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 {
-	while (len)
-		*((unsigned char *)b + --len) = c;
-	return (b);
+	int	i;
+	int cp_size;
+
+	i = 0;
+	cp_size = (int)size;
+	while (*(src + i) != '\0' && i < cp_size - 1)
+	{
+		*(dest + i) = *(src + i);
+		i++;
+	}
+	*(dest + i) = '\0';
+	while (*(src + i) != '\0')
+		i++;
+	return (i);
 }

@@ -1,18 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   memset.c                                           :+:      :+:    :+:   */
+/*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dokwon <dokwon@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/04 00:53:23 by dokwon            #+#    #+#             */
-/*   Updated: 2021/05/05 16:51:10 by dokwon           ###   ########.fr       */
+/*   Created: 2021/05/05 13:39:37 by dokwon            #+#    #+#             */
+/*   Updated: 2021/05/05 14:39:26 by dokwon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memset(void *b, int c, size_t len)
-{
-	while (len)
-		*((unsigned char *)b + --len) = c;
-	return (b);
-}
+#ifndef LIBFT_H
+# define LIBFT_H
+
+
+#endif

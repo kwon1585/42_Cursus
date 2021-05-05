@@ -1,18 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   memset.c                                           :+:      :+:    :+:   */
+/*   memcpy.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dokwon <dokwon@student.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: dokwon <dokwon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/04 00:53:23 by dokwon            #+#    #+#             */
-/*   Updated: 2021/05/05 16:51:10 by dokwon           ###   ########.fr       */
+/*   Created: 2021/05/05 17:31:29 by dokwon            #+#    #+#             */
+/*   Updated: 2021/05/05 17:48:42 by dokwon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memset(void *b, int c, size_t len)
+void *ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
 {
-	while (len)
-		*((unsigned char *)b + --len) = c;
-	return (b);
+	size_t i;
+
+	i = 0;
+	while (i < n)
+	{
+		*((unsigned char *)dst + i) = *((unsigned char *)src + i);
+		i++;
+	}
+	return (dst);
 }

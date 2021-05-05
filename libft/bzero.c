@@ -1,18 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   memset.c                                           :+:      :+:    :+:   */
+/*   bzero.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dokwon <dokwon@student.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: dokwon <dokwon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/04 00:53:23 by dokwon            #+#    #+#             */
-/*   Updated: 2021/05/05 16:51:10 by dokwon           ###   ########.fr       */
+/*   Created: 2021/05/05 16:42:23 by dokwon            #+#    #+#             */
+/*   Updated: 2021/05/05 17:31:12 by dokwon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memset(void *b, int c, size_t len)
+void	ft_bzero(void *s, size_t n)
 {
-	while (len)
-		*((unsigned char *)b + --len) = c;
-	return (b);
+	while (n)
+		*((unsigned char *)s + --n) = 0;
 }
