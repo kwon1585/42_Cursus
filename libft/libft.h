@@ -6,12 +6,13 @@
 /*   By: dokwon <dokwon@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/05 13:39:37 by dokwon            #+#    #+#             */
-/*   Updated: 2021/05/05 14:39:26 by dokwon           ###   ########.fr       */
+/*   Updated: 2021/05/06 10:07:33 by dokwon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# include <stddef.h>
 
 #endif

@@ -2,13 +2,14 @@ CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 AR = ar
 ARFLASGS = crv
-SRCS = 
-OBJS = $(SRCS:.c=.o))
+HEAD = libft.h
+SRCS = ft_memset.c ft_bzero.c
+OBJS = $(SRCS:.c=.o)
 NAME = libft.a
 
 all : $(NAME)
 
-$(NAME) : $(OBJS)
+$(NAME) : $(HEAD) $(OBJS)
 	$(AR) $(ARFLAGS) $@ $^
 
 clean :
