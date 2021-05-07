@@ -1,32 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dokwon <dokwon@student.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: dokwon <dokwon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/05 14:38:14 by dokwon            #+#    #+#             */
-/*   Updated: 2021/05/07 21:34:57 by dokwon           ###   ########.fr       */
+/*   Created: 2021/05/07 17:54:19 by dokwon            #+#    #+#             */
+/*   Updated: 2021/05/07 18:33:35 by dokwon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	size_t	i;
+	unsigned char *st1;
+	unsigned char *st2;
 
-	i = 0;
-	if (!(dst && src))
-		return (0);
-	while (*(src + i) && i + 1 < dstsize)
+	st1 = (unsigned char *)s1;
+	st2 = (unsigned char *)s2;
+	while (n-- > 0)
 	{
-		*(dst + i) = *(src + i);
-		i++;
+		if (*st1 != *st2)
+			return ((int)(*st1 - *st2));
+		st1++;
+		st2++;
 	}
-	if (dstsize)
-		*(dst + i) = '\0';
-	while (*(src + i))
-		i++;
-	return (i);
+	return (0);
 }

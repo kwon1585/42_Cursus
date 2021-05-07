@@ -1,32 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dokwon <dokwon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/07 15:24:53 by dokwon            #+#    #+#             */
-/*   Updated: 2021/05/07 16:08:15 by dokwon           ###   ########.fr       */
+/*   Created: 2021/05/07 21:37:17 by dokwon            #+#    #+#             */
+/*   Updated: 2021/05/07 21:52:28 by dokwon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	size_t	i;
+	size_t	dst_i;
+	size_t	src_i;
+	size_t	cat_i;
 
-	i = 0;
-	if (!dst && !src)
-		return (0);
-	if (dst > src)
-		while (len-- > 0)
-			*((unsigned char *)dst + len) = *((unsigned const char *)src + len);
+	dst_i = 0;
+	src_i = 0;
+	while (*(dst + dst_i))
+		dst_i++;
+	cat_i = dst_i;
+	while (*(src + src_i) && cat_i + 1 < dstsize)
+		*(dst + cat_i++) = *(src + src_i++);
+	*(dst + cat_i) = '\0';
+	src_i = 0;
+	while (*(src + src_i) != '\0')
+		src_i++;
+	if (dstsize < dst_i)
+		return (src_i + dstsize);
 	else
-		while (len-- > 0)
-		{
-			*((unsigned char *)dst + i) = *((unsigned const char *)src + i);
-			i++;
-		}
-	return (dst);
+		return (src_i + dst_i);
 }
