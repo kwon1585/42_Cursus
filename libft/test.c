@@ -1,18 +1,6 @@
 #include <stdio.h>
 #include <string.h>
-
-void	*ft_memset(void *b, int c, size_t len)
-{
-	while (len)
-		*((unsigned char *)b + --len) = c;
-	return (b);
-}
-
-void	ft_bzero(void *s, size_t n)
-{
-	while (n)
-		*((unsigned char *)s + --n) = 0;
-}
+#include "libft.h"
 
 void *ft_memcpy(void *dst, const void *src, size_t n)
 {
@@ -28,8 +16,8 @@ void *ft_memcpy(void *dst, const void *src, size_t n)
 }
 
 int main(){
-	char array[10] = "0123456789";
-	char array2[10] = "0123456789";
+	char array[10] = "123456789";
+	char array2[10] = "123456789";
 	int arr[10] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
 	int arr2[10] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
 
@@ -37,7 +25,7 @@ int main(){
 		printf("%d ", arr[i]);
 	printf("\n");
 
-	ft_memcpy(arr + 1, arr, 10);
+	ft_memcpy(((void *)0), "segfaulter tu dois", 17);
 
 	for(int i = 0; i < 10; i++){
 		printf("%d ", arr[i]);

@@ -1,24 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   memcpy.c                                           :+:      :+:    :+:   */
+/*   ft_memccpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dokwon <dokwon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/05 17:31:29 by dokwon            #+#    #+#             */
-/*   Updated: 2021/05/05 17:48:42 by dokwon           ###   ########.fr       */
+/*   Created: 2021/05/07 14:43:14 by dokwon            #+#    #+#             */
+/*   Updated: 2021/05/07 15:20:54 by dokwon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void *ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
+#include "libft.h"
+
+void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
-	while (i < n)
+	while (i < n && (dst || src))
 	{
-		*((unsigned char *)dst + i) = *((unsigned char *)src + i);
+		*((unsigned char *)dst + i) = *((unsigned const char *)src + i);
+		if (*((unsigned const char *)src + i) == (unsigned char)c)
+			return (dst + i + 1);
 		i++;
 	}
-	return (dst);
+	return (0);
 }
