@@ -6,7 +6,7 @@
 /*   By: dokwon <dokwon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/09 21:20:38 by dokwon            #+#    #+#             */
-/*   Updated: 2021/05/09 22:29:54 by dokwon           ###   ########.fr       */
+/*   Updated: 2021/05/10 01:15:07 by dokwon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,6 @@ char	*ft_strtrim(char const *s1, char const *set)
 	while (++i < j)
 		if (!ft_strchr(set, *(s1 + i)))
 			break ;
-	if (i == j)
-		return ("");
 	while (--j >= i)
 		if (!ft_strchr(set, *(s1 + j)))
 			break ;

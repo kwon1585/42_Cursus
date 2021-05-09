@@ -31,27 +31,13 @@ git clone https://github.com/Tripouille/libftTester.git
 cd libftTester/
 make a
 cd ..
+echo -e "\033[32;1m"remove test"\033[m"
+read $a
 rm -rf Libftest/ libft-war-machine/ libft-unit-test/ libftTester/
 echo -e "\033[32;1m"make fclean"\033[m"
 read $a
 make
 make fclean
-ls
-echo -e "\033[32;1m"make clean"\033[m"
-read $a
-make
-make clean
-ls
-echo -e "\033[32;1m"make all"\033[m"
-read $a
-make all
-ls
 echo -e "\033[32;1m"make bonus"\033[m"
 read $a
 make bonus
-ls
-echo -e "\033[32;1m"relink"\033[m"
-read $a
-make
-echo -e "\033[32;1m"DONE"\033[m"
-make fclean
