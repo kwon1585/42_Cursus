@@ -6,17 +6,16 @@
 /*   By: dokwon <dokwon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/07 22:40:12 by dokwon            #+#    #+#             */
-/*   Updated: 2021/05/09 02:38:53 by dokwon           ###   ########.fr       */
+/*   Updated: 2021/05/09 18:31:17 by dokwon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 char	*ft_strchr(const char *s, int c)
 {
 	int	i;
 
 	i = 0;
+	c = (unsigned char)c;
 	while (*(s + i) == c || *(s + i))
 	{
 		if (*(s + i) == c)

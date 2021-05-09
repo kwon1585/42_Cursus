@@ -6,11 +6,9 @@
 /*   By: dokwon <dokwon@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/09 03:43:03 by dokwon            #+#    #+#             */
-/*   Updated: 2021/05/09 04:07:49 by dokwon           ###   ########.fr       */
+/*   Updated: 2021/05/09 18:12:26 by dokwon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 int	ft_atoi(const char *str)
 {

@@ -1,25 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dokwon <dokwon@student.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: dokwon <dokwon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/09 02:37:12 by dokwon            #+#    #+#             */
-/*   Updated: 2021/05/09 18:32:03 by dokwon           ###   ########.fr       */
+/*   Created: 2021/05/09 18:07:25 by dokwon            #+#    #+#             */
+/*   Updated: 2021/05/09 18:09:33 by dokwon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-char	*ft_strrchr(const char *s, int c)
+int	ft_tolower(int c)
 {
-	size_t	i;
-
-	c = (unsigned char)c;
-	i = ft_strlen(s) + 1;
-	while (i-- > 0)
-		if (*(s + i) == c)
-			return ((char *)s + i);
-	return (0);
+	if (c >= 65 && c <= 90)
+		return (c + 32);
+	return (c);
 }
