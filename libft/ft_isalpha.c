@@ -1,27 +1,15 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dokwon <dokwon@student.42.fr>              +#+  +:+       +#+        */
+/*   By: dokwon <dokwon@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/07 22:40:12 by dokwon            #+#    #+#             */
-/*   Updated: 2021/05/09 02:38:53 by dokwon           ###   ########.fr       */
+/*   Created: 2021/05/09 13:24:06 by dokwon            #+#    #+#             */
+/*   Updated: 2021/05/09 13:46:14 by dokwon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
-{
-	int	i;
-
-	i = 0;
-	while (*(s + i) == c || *(s + i))
-	{
-		if (*(s + i) == c)
-			return ((char *)s + i);
-		i++;
-	}
-	return (0);
-}
+int	ft_isalpha(int c)
