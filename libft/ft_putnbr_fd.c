@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dokwon <dokwon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/09 21:01:47 by dokwon            #+#    #+#             */
-/*   Updated: 2021/05/10 09:36:20 by dokwon           ###   ########.fr       */
+/*   Created: 2021/05/10 11:39:42 by dokwon            #+#    #+#             */
+/*   Updated: 2021/05/10 12:58:28 by dokwon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+void	ft_putnbr_fd(int n, int fd)
 {
-	char	*p;
-	size_t	len;
+	char		c;
+	long long	n1;
 
-	if (!s1 || !s2)
-		return (0);
-	len = ft_strlen(s1) + ft_strlen(s2);
-	p = (char *)malloc(sizeof(char) * len + 1);
-	if (!p)
-		return (0);
-	p = ft_memcpy(p, s1, ft_strlen(s1));
-	ft_memcpy(p + ft_strlen(s1), s2, ft_strlen(s2));
-	*(p + len) = '\0';
-	return (p);
+	n1 = n;
+	if (n < 0)
+	{
+		write(fd, "-", 1);
+		n1 *= -1;
+	}
+	if (n1 >= 10)
+		ft_putnbr_fd(n1 / 10, fd);
+	c = n1 % 10 + 48;
+	write(fd, &c, 1);
 }

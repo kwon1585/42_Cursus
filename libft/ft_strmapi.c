@@ -1,30 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dokwon <dokwon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/09 21:01:47 by dokwon            #+#    #+#             */
-/*   Updated: 2021/05/10 09:36:20 by dokwon           ###   ########.fr       */
+/*   Created: 2021/05/10 11:04:33 by dokwon            #+#    #+#             */
+/*   Updated: 2021/05/10 11:13:50 by dokwon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	char	*p;
-	size_t	len;
+	int		i;
+	int		len;
+	char	*rtn;
 
-	if (!s1 || !s2)
+	i = 0;
+	if (!s)
 		return (0);
-	len = ft_strlen(s1) + ft_strlen(s2);
-	p = (char *)malloc(sizeof(char) * len + 1);
-	if (!p)
+	len = ft_strlen(s);
+	rtn = malloc(sizeof(char) * (len + 1));
+	if (!rtn)
 		return (0);
-	p = ft_memcpy(p, s1, ft_strlen(s1));
-	ft_memcpy(p + ft_strlen(s1), s2, ft_strlen(s2));
-	*(p + len) = '\0';
-	return (p);
+	*(rtn + len) = 0;
+	while (i < len)
+	{
+		*(rtn + i) = f(i, *(s + i));
+		i++;
+	}
+	return (rtn);
 }

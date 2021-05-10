@@ -4,8 +4,11 @@
 
 int main()
 {
-	char *s = "abcdef";
-	char *p = ft_strchr(s, 'd');
-	
-	printf("%p %p %d", s, p, (int)(s - p));
+	char *s = "split  ||this|for|me|||||!|";
+	int i = 0;
+	char **result = ft_split(s, '|');
+
+	while (*(result + i))
+		printf("i : %d | %s\n", i, *(result + i++));
+	free(result);
 }
