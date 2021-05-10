@@ -22,7 +22,7 @@ all : $(NAME)
 $(NAME) : $(OBJS)
 	$(AR) $(ARFLAGS) $@ $^
 
-bonus : $(OBJS_BNS)
+bonus : $(OBJS_BNS) 
 	$(AR) $(ARFLAGS) $(NAME) $^
 
 clean :
