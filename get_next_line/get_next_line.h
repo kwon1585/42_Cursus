@@ -6,7 +6,7 @@
 /*   By: dokwon <dokwon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/10 17:55:36 by dokwon            #+#    #+#             */
-/*   Updated: 2021/05/10 19:30:31 by dokwon           ###   ########.fr       */
+/*   Updated: 2021/05/12 15:16:07 by dokwon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,21 @@
 
 # include <unistd.h>
 # include <stdlib.h>
+# include <stdio.h>
+# include <stddef.h>
 
-int get_next_line(int fd, char **line);
+#ifndef BUFFER_SIZE
+# define BUFFER_SIZE 42
+#endif
+
+# define SUCCESS 1
+# define END_OF_FILE 0
+# define ERROR -1
+
+int 	get_next_line(int fd, char **line);
+int		ft_strchri(const char *s, int c);
+size_t	ft_strlen(const char *s);
+char	*ft_strdup(const char *s1);
+void	*ft_memcpy(void *dst, const void *src, int n);
 
 #endif
