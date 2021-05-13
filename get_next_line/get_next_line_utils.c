@@ -6,7 +6,7 @@
 /*   By: dokwon <dokwon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/10 17:55:18 by dokwon            #+#    #+#             */
-/*   Updated: 2021/05/12 15:14:45 by dokwon           ###   ########.fr       */
+/*   Updated: 2021/05/13 00:29:47 by dokwon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,4 +61,21 @@ int		ft_strchri(const char *s, int c)
 		i++;
 	}
 	return (-1);
+}
+
+char	*ft_strjoin(char const *s1, char const *s2)
+{
+	char	*p;
+	size_t	len;
+
+	if (!s1 || !s2)
+		return (0);
+	len = ft_strlen(s1) + ft_strlen(s2);
+	p = (char *)malloc(sizeof(char) * len + 1);
+	if (!p)
+		return (0);
+	p = ft_memcpy(p, s1, ft_strlen(s1));
+	ft_memcpy(p + ft_strlen(s1), s2, ft_strlen(s2));
+	*(p + len) = '\0';
+	return (p);
 }

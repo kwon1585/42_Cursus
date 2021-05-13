@@ -6,51 +6,40 @@
 /*   By: dokwon <dokwon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/10 17:55:01 by dokwon            #+#    #+#             */
-/*   Updated: 2021/05/12 15:11:32 by dokwon           ###   ########.fr       */
+/*   Updated: 2021/05/13 01:59:13 by dokwon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-int	cpy_data(char **line, char *buf, int enter, int end)
+static int	cpy_data(char **line, char *buf, int enter, int end)
 {
-	static int	index = 0;
-	char		*tmp;
+	int		rtn = 0;
+	char	*tmp;
 
-	if (enter >= 0)
-	{
-		*(buf + enter) = 0;
-		tmp = ft_strdup(buf);
-		*line = tmp;
-		return (SUCCESS);
-	}
-	else if (end >= 0)
-	{
-		*(buf + end) = 0;
-		tmp = ft_strdup(buf);
-		*line = tmp;
-		return (END_OF_FILE);
-	}
-	ft_memcpy(*line + index, buf, BUFFER_SIZE);
-	index += BUFFER_SIZE;
-	return (-1);
 }
 
 
-int		get_next_line(int fd, char **line)
+int			get_next_line(int fd, char **line)
 {
-	int		rtn;
+	int		size;
+	int		index;
 	char	*buf;
 
 	if (fd < 0 || !line || BUFFER_SIZE < 1)
 		return (ERROR);
-	rtn = -1;
 	buf = malloc(sizeof(char) * BUFFER_SIZE + 1);
-	while (rtn < 0)
+	while ((size = read(fd, buf, BUFFER_SIZE)) >= 0)
 	{
-		read(fd, buf, BUFFER_SIZE);
+		buf[BUFFER_SIZE] = 0;
+		if ((index = ft_strchri(buf, '\n')) >= 0)
+			return (print_line(size, buf, index));
+		else if (size < BUFFER_SIZE)
+			return (print_line(size, buf , size);
+
+		
 		rtn = cpy_data(line, buf, ft_strchri(buf, '\n'), ft_strchri(buf, EOF));
 	}
 	free(buf);
-	return (rtn);
+	return (ERROR);
 }
