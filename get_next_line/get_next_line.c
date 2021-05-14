@@ -6,12 +6,12 @@
 /*   By: dokwon <dokwon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/10 17:55:01 by dokwon            #+#    #+#             */
-/*   Updated: 2021/05/13 22:29:49 by dokwon           ###   ########.fr       */
+/*   Updated: 2021/05/14 01:31:27 by dokwon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-
+#include "stdio.h"
 #define FD_MAX 50
 
 static void	make_line(char **line, char *data)
@@ -56,8 +56,6 @@ int			get_next_line(int fd, char **line)
 				clean = 0;
 				while (clean < BUFFER_SIZE)
 					buf[fd][clean++] = 0;
-				if (size < BUFFER_SIZE)
-					return (END_OF_FILE);
 			}
 		}
 		else
