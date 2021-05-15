@@ -6,7 +6,7 @@
 /*   By: dokwon <dokwon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/10 17:55:36 by dokwon            #+#    #+#             */
-/*   Updated: 2021/05/15 15:13:32 by dokwon           ###   ########.fr       */
+/*   Updated: 2021/05/15 20:02:26 by dokwon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@
 # define SUCCESS 1
 # define END_OF_FILE 0
 # define ERROR -1
-# define FD_MAX 2156
+# define FD_MAX 256
 
 int 	get_next_line(int fd, char **line);
 int		ft_strchri(const char *s, int c);
