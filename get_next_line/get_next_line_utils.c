@@ -6,13 +6,13 @@
 /*   By: dokwon <dokwon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/10 17:55:18 by dokwon            #+#    #+#             */
-/*   Updated: 2021/05/13 21:01:14 by dokwon           ###   ########.fr       */
+/*   Updated: 2021/05/15 15:27:44 by dokwon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-void	*ft_memcpy(void *dst, const void *src, int n)
+static void		*ft_memcpy(void *dst, const void *src, int n)
 {
 	int i;
 
@@ -25,7 +25,7 @@ void	*ft_memcpy(void *dst, const void *src, int n)
 	return (dst);
 }
 
-size_t	ft_strlen(const char *s)
+static size_t	ft_strlen(const char *s)
 {
 	size_t	index;
 
@@ -35,20 +35,7 @@ size_t	ft_strlen(const char *s)
 	return (index);
 }
 
-char	*ft_strdup(const char *s1)
-{
-	char	*p;
-	size_t	len;
-
-	len = ft_strlen(s1);
-	p = (char *)malloc(len * sizeof(const char) + 1);
-	if (!p)
-		return (0);
-	p = ft_memcpy(p, s1, len + 1);
-	return (p);
-}
-
-int		ft_strchri(const char *s, int c)
+static int		ft_strchri(const char *s, int c)
 {
 	int	i;
 
@@ -63,7 +50,7 @@ int		ft_strchri(const char *s, int c)
 	return (-1);
 }
 
-char	*ft_strjoin(char const *s1, char const *s2)
+static char		*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*p;
 	size_t	len;
@@ -80,7 +67,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	return (p);
 }
 
-void	*ft_calloc(size_t count, size_t size)
+static void		*ft_calloc(size_t count, size_t size)
 {
 	int		mul;
 	void	*p;

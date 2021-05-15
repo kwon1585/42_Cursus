@@ -6,7 +6,7 @@
 /*   By: dokwon <dokwon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/10 17:55:18 by dokwon            #+#    #+#             */
-/*   Updated: 2021/05/13 21:01:14 by dokwon           ###   ########.fr       */
+/*   Updated: 2021/05/15 12:05:03 by dokwon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,19 +33,6 @@ size_t	ft_strlen(const char *s)
 	while (*(s + index))
 		index++;
 	return (index);
-}
-
-char	*ft_strdup(const char *s1)
-{
-	char	*p;
-	size_t	len;
-
-	len = ft_strlen(s1);
-	p = (char *)malloc(len * sizeof(const char) + 1);
-	if (!p)
-		return (0);
-	p = ft_memcpy(p, s1, len + 1);
-	return (p);
 }
 
 int		ft_strchri(const char *s, int c)
