@@ -1,0 +1,14 @@
+ERROR: undefined error.. can I get the case? <cloudeven@gmail.com>
+ERROR: empty input. '-h' is help.
+ERROR: wrong input. '-h' is help.
+ERROR: It is not an IP-V4 address type. (IP types only have 4 numbers, 3 dots, and 1 slash or 0. Like [1.0.0.1/24] or [1.0.0.1])
+ERROR: The (IP-V4) range is invalid (Each value is in the range of DEC: 0 ~ 255)
+ERROR: The (IP-V4) range is incorrect (The total length must be less than 16)
+ERROR: please input same type. (DEC or HEX)
+ERROR: IP cannot use [0.x.x.x] or [127.x.x.x]. EX: [127.0.0.1] is loopback IP
+ERROR: SUB NET form is [/xx]
+ERROR: SUBNET (IPV4) must be between 1 and 31.
+ERROR: Command error. '-h' is help.
+ERROR: (IP_V4) does not accept the following values: Example: [0.0.0.0], [255.255.255.255]
+ERROR: Classes D and E require the address bit size.
+ERROR: Do you think it is possible?

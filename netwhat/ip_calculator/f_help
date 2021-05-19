@@ -1,0 +1,25 @@
++---- help -------------------------------------------------------------------------------+
+|                                                                                         |
+| - This is ip calculator -                                                               |
+|                                                                                         |
+| [ip xxx.xxx.xxx.xxx    || 192.168.0.1]    : input ip                                    |
+| [ip xxx.xxx.xxx.xxx/xx || 192.168.0.1/25] : input ip and subnet                         |
+| [/xx]                                     : change net address bit size                 |
+| [mask xxx.xxx.xxx.xxx]                    : show mask information                       |
+|                                                                                         |
+| [-h || help]      : show this help messages                                             |
+| [-s || status]    : show status                                                         |
+| [-a || auto]      : auto show -s option. (This option does not support forms such as    |
+|                       [-s ip -s]. If you want to see the two together, please turn off  |
+|                       the auto function)                                                |
+| [-q || quit]      : quit                                                                |
+|                                                                                         |
+|                                                                                         |
+| private A : 10.0.0.0 ~ 10.255.255.255                                                   |
+| private B : 172.16.0.0 ~ 172.31.255.255                                                 |
+| private C : 192.168.0.0 ~ 192.168.255.255                                               |
+|                                                                                         |
+| contact me: cloudeven@gmail.com                                                         |
+|                                                                                         |
++-----------------------------------------------------------------------------------------+
+
