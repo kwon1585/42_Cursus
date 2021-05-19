@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dokwon <dokwon@student.42.fr>              +#+  +:+       +#+        */
+/*   By: dokwon <dokwon@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/10 17:55:01 by dokwon            #+#    #+#             */
-/*   Updated: 2021/05/15 14:53:54 by dokwon           ###   ########.fr       */
+/*   Created: 2021/05/18 20:14:23 by dokwon            #+#    #+#             */
+/*   Updated: 2021/05/18 20:14:31 by dokwon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 static int	put_line(char **line, char *data)
 {
@@ -23,17 +23,18 @@ static int	put_line(char **line, char *data)
 	return (0);
 }
 
-static int	make_line(char **line, char buf[][BUFFER_SIZE + 2], int fd, int index)
+static int	make_line(char **line,
+								char buf[][BUFFER_SIZE + 1], int fd, int index)
 {
 	char	*tmp;
-	
+
 	if ((tmp = ft_calloc(index + 1, sizeof(char))) == 0)
 		return (ERROR);
 	ft_memcpy(tmp, buf[fd], index);
 	tmp[index++] = 0;
 	if ((put_line(line, tmp)) == ERROR)
 	{
-		free(tmp);	
+		free(tmp);
 		return (ERROR);
 	}
 	ft_memcpy(buf[fd], buf[fd] + index, BUFFER_SIZE);
@@ -41,8 +42,8 @@ static int	make_line(char **line, char buf[][BUFFER_SIZE + 2], int fd, int index
 	return (SUCCESS);
 }
 
-
-static int	clean_buf(char **line, int fd, char buf[][BUFFER_SIZE + 2], int size)
+static int	clean_buf(char **line, int fd,
+								char buf[][BUFFER_SIZE + 1], int size)
 {
 	int	clean;
 
@@ -65,12 +66,12 @@ int			get_next_line(int fd, char **line)
 {
 	int			index;
 	int			size;
-	static char	buf[FD_MAX + 1][BUFFER_SIZE + 2];
+	static char	buf[FD_MAX + 1][BUFFER_SIZE + 1];
 
 	if (fd < 0 || fd > FD_MAX || !line || BUFFER_SIZE < 1)
 		return (ERROR);
 	if ((*line = ft_calloc(1, 1)) == 0)
-			return (ERROR);
+		return (ERROR);
 	while (1)
 	{
 		if (buf[fd][0])
@@ -82,8 +83,7 @@ int			get_next_line(int fd, char **line)
 					return (ERROR);
 				clean_buf(line, fd, buf, BUFFER_SIZE);
 			}
-		else
-			if ((size = read(fd, buf[fd], BUFFER_SIZE)) <= 0)
-				return (clean_buf(line, fd, buf, size));
+		else if ((size = read(fd, buf[fd], BUFFER_SIZE)) <= 0)
+			return (clean_buf(line, fd, buf, size));
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: dokwon <dokwon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/10 17:55:18 by dokwon            #+#    #+#             */
-/*   Updated: 2021/05/15 19:59:44 by dokwon           ###   ########.fr       */
+/*   Updated: 2021/05/18 20:13:08 by dokwon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,4 +80,3 @@ void	*ft_calloc(size_t count, size_t size)
 		*((unsigned char *)p + --mul) = 0;
 	return (p);
 }
-

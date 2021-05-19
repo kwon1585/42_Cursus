@@ -1,33 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.h                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dokwon <dokwon@student.42.fr>              +#+  +:+       +#+        */
+/*   By: dokwon <dokwon@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/10 17:55:36 by dokwon            #+#    #+#             */
-/*   Updated: 2021/05/15 14:09:46 by dokwon           ###   ########.fr       */
+/*   Created: 2021/05/18 20:15:00 by dokwon            #+#    #+#             */
+/*   Updated: 2021/05/18 20:15:12 by dokwon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#ifndef GET_NEXT_LINE_BONUS_H
+# define GET_NEXT_LINE_BONUS_H
 
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdio.h>
 # include <stddef.h>
+# include <sys/wait.h>
 
-#ifndef BUFFER_SIZE
-# define BUFFER_SIZE 100
-#endif
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 100
+# endif
 
 # define SUCCESS 1
 # define END_OF_FILE 0
 # define ERROR -1
-# define FD_MAX 2156
+# define FD_MAX 256
 
-int 	get_next_line(int fd, char **line);
+int		get_next_line(int fd, char **line);
 int		ft_strchri(const char *s, int c);
 size_t	ft_strlen(const char *s);
 void	*ft_memcpy(void *dst, const void *src, int n);

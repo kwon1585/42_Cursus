@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_utils.c                              :+:      :+:    :+:   */
+/*   get_next_line_utils_bonus.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dokwon <dokwon@student.42.fr>              +#+  +:+       +#+        */
+/*   By: dokwon <dokwon@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/10 17:55:18 by dokwon            #+#    #+#             */
-/*   Updated: 2021/05/15 12:05:03 by dokwon           ###   ########.fr       */
+/*   Created: 2021/05/18 20:14:43 by dokwon            #+#    #+#             */
+/*   Updated: 2021/05/18 20:14:49 by dokwon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 void	*ft_memcpy(void *dst, const void *src, int n)
 {
@@ -80,4 +80,3 @@ void	*ft_calloc(size_t count, size_t size)
 		*((unsigned char *)p + --mul) = 0;
 	return (p);
 }
-
