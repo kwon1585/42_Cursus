@@ -6,18 +6,15 @@
 /*   By: dokwon <dokwon@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 20:15:00 by dokwon            #+#    #+#             */
-/*   Updated: 2021/05/18 20:15:12 by dokwon           ###   ########.fr       */
+/*   Updated: 2021/05/20 14:22:48 by dokwon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_BONUS_H
 # define GET_NEXT_LINE_BONUS_H
 
-# include <unistd.h>
 # include <stdlib.h>
-# include <stdio.h>
-# include <stddef.h>
-# include <sys/wait.h>
+# include <unistd.h>
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 100
