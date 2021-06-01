@@ -6,7 +6,7 @@
 /*   By: dokwon <dokwon@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/02 03:51:29 by dokwon            #+#    #+#             */
-/*   Updated: 2021/06/02 04:14:11 by dokwon           ###   ########.fr       */
+/*   Updated: 2021/06/02 04:20:40 by dokwon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,5 @@
 
 int ft_printf(const char *type, ...)
 {
-	type = 0;
-	return (0);
+	va_arg
 }
