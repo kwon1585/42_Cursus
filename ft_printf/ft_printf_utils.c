@@ -1,18 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_printf_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dokwon <dokwon@student.42.fr>              +#+  +:+       +#+        */
+/*   By: dokwon <dokwon@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/09 17:53:48 by dokwon            #+#    #+#             */
-/*   Updated: 2021/05/09 17:55:11 by dokwon           ###   ########.fr       */
+/*   Created: 2021/07/26 05:37:31 by dokwon            #+#    #+#             */
+/*   Updated: 2021/07/26 06:07:18 by dokwon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isascii(int c)
+#include "ft_printf.h"
+
+int	ft_putchr(char *c)
 {
-	if (c >= 0 && c <= 127)
-		return (1);
-	return (0);
+	write(1, c, 1);
+	return (1);
 }

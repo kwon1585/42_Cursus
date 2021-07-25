@@ -1,30 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   check.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dokwon <dokwon@student.42.fr>              +#+  +:+       +#+        */
+/*   By: dokwon <dokwon@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/10 11:39:42 by dokwon            #+#    #+#             */
-/*   Updated: 2021/05/10 12:58:28 by dokwon           ###   ########.fr       */
+/*   Created: 2021/07/26 05:38:30 by dokwon            #+#    #+#             */
+/*   Updated: 2021/07/26 08:34:43 by dokwon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-void	ft_putnbr_fd(int n, int fd)
+void	init_check(t_check *check)
 {
-	char		c;
-	long long	n1;
+	check->conversion = 0;
+}
 
-	n1 = n;
-	if (n < 0)
-	{
-		write(fd, "-", 1);
-		n1 *= -1;
-	}
-	if (n1 >= 10)
-		ft_putnbr_fd(n1 / 10, fd);
-	c = n1 % 10 + 48;
-	write(fd, &c, 1);
+char	*check_format(t_check *check, char *format)
+{
+	init_check(check);
+	format++;
+	check->conversion = *(format++);
+	return (format);
 }
