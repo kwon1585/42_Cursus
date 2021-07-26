@@ -1,19 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_utils.c                                  :+:      :+:    :+:   */
+/*   print_char.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dokwon <dokwon@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/26 05:37:31 by dokwon            #+#    #+#             */
-/*   Updated: 2021/07/26 22:42:47 by dokwon           ###   ########.fr       */
+/*   Created: 2021/07/26 21:37:51 by dokwon            #+#    #+#             */
+/*   Updated: 2021/07/26 22:44:13 by dokwon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putchar(char *c)
+int	print_char(va_list ap, t_check *check)
 {
-	write(1, c, 1);
+	char print;
+
+	print = va_arg(ap, int);
+	if (check->conversion == 'c')
+		ft_putchar(&print);
 	return (1);
 }

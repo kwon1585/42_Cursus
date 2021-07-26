@@ -6,7 +6,7 @@
 /*   By: dokwon <dokwon@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/02 04:00:11 by dokwon            #+#    #+#             */
-/*   Updated: 2021/07/26 06:55:17 by dokwon           ###   ########.fr       */
+/*   Updated: 2021/07/26 22:42:31 by dokwon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,12 @@ typedef struct	s_check
 }				t_check;
 
 
+int	ft_putchar(char *c);
+
 void	init_check(t_check *check);
 char	*check_format(t_check *check, char *format);
 
-int	ft_putchr(char *c);
+int	print_char(va_list ap, t_check *check);
 
 int	pre_print(va_list ap, char *format);
 int	ft_printf(const char *type, ...);

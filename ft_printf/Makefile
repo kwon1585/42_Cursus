@@ -2,20 +2,17 @@ CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 AR = ar
 ARFLAGS = -cr
-SRCS = ft_printf.c
-SRCS_BNS = .c
+SRCS = ft_printf.c ft_printf_utils.c check.c \
+		print/print_char.c
 OBJS = $(SRCS:.c=.o)
-OBJS_BNS = $(SRCS:.c=.o) $(SRCS_BNS:.c=.o)
 NAME = libftprintf.a
-
 
 all : $(NAME)
 
 $(NAME) : $(OBJS)
 	$(AR) $(ARFLAGS) $@ $^
 
-bonus : $(OBJS_BNS) 
-	$(AR) $(ARFLAGS) $(NAME) $^
+bonus : $(NAME)
 
 clean :
 	rm -f $(OBJS) $(OBJS_BNS)

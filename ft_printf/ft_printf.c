@@ -6,7 +6,7 @@
 /*   By: dokwon <dokwon@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/02 03:51:29 by dokwon            #+#    #+#             */
-/*   Updated: 2021/07/26 08:36:19 by dokwon           ###   ########.fr       */
+/*   Updated: 2021/07/26 22:43:01 by dokwon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,19 @@ int	print_hub(va_list ap, t_check *check)
 	rtn = 0;
 	conv = check->conversion;
 	if (conv == 'c')
-	{
-		char a = va_arg(ap, int);
-		write(1, &a, 1);
-	}
-		
-	/*
 		rtn = print_char(ap, check);
+	/*
+	else if (conv == 's')
+		rtn = print_str(ap, check);
+	else if (conv == 'p')
+		rtn = print_add(ap, check);
+	else if (conv == 'd' || conv == 'i' || conv == 'u')
+		rtn = print_dec(ap, check);
+	else if (conv == 'x' || conv == 'X')
+		rtn = print_hex(ap, check);
 	*/
+	else
+		rtn = ERROR;
 	return (rtn);
 }
 
@@ -47,7 +52,7 @@ int	pre_print(va_list ap, char *format)
 			rtn += print_hub(ap, check);			
 		}
 		else
-			rtn += ft_putchr(format++);
+			rtn += ft_putchar(format++);
 	}
 	free(check);
 	return (rtn);
