@@ -6,7 +6,7 @@
 /*   By: dokwon <dokwon@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/02 03:51:29 by dokwon            #+#    #+#             */
-/*   Updated: 2021/07/26 22:43:01 by dokwon           ###   ########.fr       */
+/*   Updated: 2021/07/27 01:22:45 by dokwon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,11 @@ int	print_hub(va_list ap, t_check *check)
 	conv = check->conversion;
 	if (conv == 'c')
 		rtn = print_char(ap, check);
-	/*
 	else if (conv == 's')
 		rtn = print_str(ap, check);
 	else if (conv == 'p')
-		rtn = print_add(ap, check);
+		rtn = print_addr(ap, check);
+	/*
 	else if (conv == 'd' || conv == 'i' || conv == 'u')
 		rtn = print_dec(ap, check);
 	else if (conv == 'x' || conv == 'X')

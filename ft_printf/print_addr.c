@@ -1,23 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_char.c                                       :+:      :+:    :+:   */
+/*   print_addr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dokwon <dokwon@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/26 21:37:51 by dokwon            #+#    #+#             */
-/*   Updated: 2021/07/26 22:44:13 by dokwon           ###   ########.fr       */
+/*   Created: 2021/07/27 00:00:50 by dokwon            #+#    #+#             */
+/*   Updated: 2021/07/27 01:21:33 by dokwon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	print_char(va_list ap, t_check *check)
+int	print_addr(va_list ap, t_check *check)
 {
-	char print;
+	int					rtn;
+	char				*print;
+	unsigned long long	addr;
 
-	print = va_arg(ap, int);
-	if (check->conversion == 'c')
-		ft_putchar(&print);
-	return (1);
+	addr = va_arg(ap, unsigned long long);
+	print = ft_itoa(addr);
+	print = ft_strjoin("0x", print);
+	if (check->conversion == 'p')
+	{
+		while (*print)
+		{
+				ft_putchar(print);
+			print++;
+		}
+	}
+	return (rtn);
 }
