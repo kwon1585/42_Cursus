@@ -1,4 +1,7 @@
---- 07.27 ---
+--- 07.27 #1 ---
 # finish mandatory char, str
 # now start p(address)
 # itoa, strlen generalize
+
+--- 07.27 #2 ---
+#convert_base

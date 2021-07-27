@@ -18,6 +18,29 @@ int	ft_putchar(char *c)
 	return (1);
 }
 
+size_t	ft_strlen(const char *s)
+{
+	size_t	index;
+
+	index = 0;
+	while (*(s + index))
+		index++;
+	return (index);
+}
+
+void	*ft_memcpy(void *dst, const void *src, size_t n)
+{
+	size_t i;
+
+	i = 0;
+	while (i < n && (dst || src))
+	{
+		*((unsigned char *)dst + i) = *((unsigned const char *)src + i);
+		i++;
+	}
+	return (dst);
+}
+
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*p;
@@ -35,24 +58,17 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	return (p);
 }
 
-int		get_length(unsigned long long n)
+int	ft_intlen(unsigned long long n)
 {
-	int			rtn;
-	long long	n1;
+	int	rtn;
 
 	rtn = 0;
-	n1 = n;
-	if (n < 0)
-	{
-		n1 *= -1;
-		rtn++;
-	}
-	else if (n == 0)
+	if (n == 0)
 		return (1);
-	while (n1)
+	while (n)
 	{
 		rtn++;
-		n1 /= 10;
+		n /= 10;
 	}
 	return (rtn);
 }
@@ -61,24 +77,17 @@ char	*ft_itoa(unsigned long long n)
 {
 	int			len;
 	char		*rtn;
-	long long	n1;
 
-	len = get_length(n);
+	len = ft_intlen(n);
 	rtn = malloc(sizeof(char) * (len + 1));
 	if (!rtn)
 		return (0);
 	*(rtn + len--) = 0;
-	n1 = n;
-	if (n < 0)
+	while (n >= 10)
 	{
-		n1 = n1 * -1;
-		*rtn = '-';
+		*(rtn + len--) = n % 10 + 48;
+		n = n / 10;
 	}
-	while (n1 >= 10)
-	{
-		*(rtn + len--) = n1 % 10 + 48;
-		n1 = n1 / 10;
-	}
-	*(rtn + len) = n1 + 48;
+	*(rtn + len) = n + 48;
 	return (rtn);
 }

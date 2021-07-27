@@ -16,18 +16,24 @@ int	print_addr(va_list ap, t_check *check)
 {
 	int					rtn;
 	char				*print;
+	char				*hexa;
 	unsigned long long	addr;
 
+	rtn = 0;
 	addr = va_arg(ap, unsigned long long);
-	print = ft_itoa(addr);
-	print = ft_strjoin("0x", print);
+	hexa = ft_itoa(addr);
+	print = ft_strjoin("0x", hexa);
+	if (!print)
+		return (ERROR);
 	if (check->conversion == 'p')
 	{
 		while (*print)
 		{
-				ft_putchar(print);
-			print++;
+			ft_putchar(print++);
+			rtn++;
 		}
 	}
+	free(print - rtn);
+	free(hexa);
 	return (rtn);
 }

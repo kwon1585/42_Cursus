@@ -26,8 +26,10 @@ typedef struct	s_check
 
 
 int		ft_putchar(char *c);
+size_t	ft_strlen(const char *s);
+void	*ft_memcpy(void *dst, const void *src, size_t n);
 char	*ft_strjoin(char const *s1, char const *s2);
-int		get_length(unsigned long long n);
+int		ft_intlen(unsigned long long n);
 char	*ft_itoa(unsigned long long n);
 
 
