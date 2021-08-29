@@ -3,7 +3,7 @@
 
 int main(void)
 {
-	char t = 'A';
+	int t = 42;
 	char k = '@';
 	printf("hello world %p\n", &t);
 	ft_printf("hello world %p", &t);

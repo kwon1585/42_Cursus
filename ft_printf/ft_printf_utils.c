@@ -6,7 +6,7 @@
 /*   By: dokwon <dokwon@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/26 05:37:31 by dokwon            #+#    #+#             */
-/*   Updated: 2021/07/27 01:18:43 by dokwon           ###   ########.fr       */
+/*   Updated: 2021/07/28 00:42:06 by dokwon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	return (p);
 }
 
-int	ft_intlen(unsigned long long n)
+int	ft_nbrlen(unsigned long long n, int base)
 {
 	int	rtn;
 
@@ -68,7 +68,7 @@ int	ft_intlen(unsigned long long n)
 	while (n)
 	{
 		rtn++;
-		n /= 10;
+		n /= base;
 	}
 	return (rtn);
 }
@@ -78,7 +78,7 @@ char	*ft_itoa(unsigned long long n)
 	int			len;
 	char		*rtn;
 
-	len = ft_intlen(n);
+	len = ft_nbrlen(n, 10);
 	rtn = malloc(sizeof(char) * (len + 1));
 	if (!rtn)
 		return (0);

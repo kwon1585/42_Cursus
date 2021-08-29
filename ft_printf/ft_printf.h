@@ -6,7 +6,7 @@
 /*   By: dokwon <dokwon@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/02 04:00:11 by dokwon            #+#    #+#             */
-/*   Updated: 2021/07/27 01:23:22 by dokwon           ###   ########.fr       */
+/*   Updated: 2021/07/28 00:41:44 by dokwon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int		ft_putchar(char *c);
 size_t	ft_strlen(const char *s);
 void	*ft_memcpy(void *dst, const void *src, size_t n);
 char	*ft_strjoin(char const *s1, char const *s2);
-int		ft_intlen(unsigned long long n);
+int		ft_nbrlen(unsigned long long n, int base);
 char	*ft_itoa(unsigned long long n);
 
 

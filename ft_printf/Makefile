@@ -3,7 +3,7 @@ CFLAGS = -Wall -Wextra -Werror
 AR = ar
 ARFLAGS = -cr
 SRCS = ft_printf.c ft_printf_utils.c check.c \
-		print_char.c print_str.c
+		print_char.c print_str.c print_addr.c
 OBJS = $(SRCS:.c=.o)
 NAME = libftprintf.a
 
