@@ -6,7 +6,7 @@
 /*   By: dokwon <dokwon@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/02 04:00:11 by dokwon            #+#    #+#             */
-/*   Updated: 2021/08/30 22:50:14 by dokwon           ###   ########.fr       */
+/*   Updated: 2021/08/30 23:33:09 by dokwon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@
 
 # define ERROR -1
 
-typedef struct	s_check
+typedef struct s_check
 {
-	char		conversion;
-}				t_check;
+	char	conversion;
+}			t_check;
 
 int		ft_putchar(char *c);
 size_t	ft_strlen(const char *s);
@@ -35,15 +35,15 @@ char	*ft_itoa(unsigned long long n);
 void	init_check(t_check *check);
 char	*check_format(t_check *check, char *format);
 
-void    to_hex(unsigned long long nb, char *print, int is_upper);
+void	to_hex(unsigned long long nb, char *print, int is_upper);
 
-int	print_char(va_list ap, t_check *check);
-int	print_str(va_list ap, t_check *check);
-int	print_addr(va_list ap, t_check *check);
-int	print_dec(va_list ap, t_check *check);
-int	print_hex(va_list ap, t_check *check);
+int		print_char(va_list ap, t_check *check);
+int		print_str(va_list ap, t_check *check);
+int		print_addr(va_list ap, t_check *check);
+int		print_dec(va_list ap, t_check *check);
+int		print_hex(va_list ap, t_check *check);
 
-int	pre_print(va_list ap, char *format);
-int	ft_printf(const char *type, ...);
+int		pre_print(va_list ap, char *format);
+int		ft_printf(const char *type, ...);
 
 #endif
