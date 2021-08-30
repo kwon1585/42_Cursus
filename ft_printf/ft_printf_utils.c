@@ -6,7 +6,7 @@
 /*   By: dokwon <dokwon@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/26 05:37:31 by dokwon            #+#    #+#             */
-/*   Updated: 2021/07/28 00:42:06 by dokwon           ###   ########.fr       */
+/*   Updated: 2021/08/30 21:36:23 by dokwon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ size_t	ft_strlen(const char *s)
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	while (i < n && (dst || src))

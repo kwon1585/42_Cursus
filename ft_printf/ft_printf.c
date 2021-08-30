@@ -6,7 +6,7 @@
 /*   By: dokwon <dokwon@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/02 03:51:29 by dokwon            #+#    #+#             */
-/*   Updated: 2021/08/30 18:30:03 by dokwon           ###   ########.fr       */
+/*   Updated: 2021/08/30 21:34:51 by dokwon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,14 +42,15 @@ int	pre_print(va_list ap, char *format)
 	t_check	*check;
 
 	rtn = 0;
-	if (!(check = malloc(sizeof(t_check))))
+	check = malloc(sizeof(t_check));
+	if (!check)
 		return (ERROR);
 	while (*format)
 	{
 		if (*format == '%')
 		{
 			format = check_format(check, format);
-			rtn += print_hub(ap, check);			
+			rtn += print_hub(ap, check);
 		}
 		else
 			rtn += ft_putchar(format++);
