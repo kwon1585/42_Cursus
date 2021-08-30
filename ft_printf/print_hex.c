@@ -6,7 +6,7 @@
 /*   By: dokwon <dokwon@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/30 18:06:00 by dokwon            #+#    #+#             */
-/*   Updated: 2021/08/30 18:32:22 by dokwon           ###   ########.fr       */
+/*   Updated: 2021/08/30 22:48:33 by dokwon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,18 +22,18 @@ int	print_hex(va_list ap, t_check *check)
 	rtn = 0;
 	num = va_arg(ap, unsigned int);
 	len = ft_nbrlen(num, 16);
-	if (!(print = calloc(sizeof(char), len + 1)))
+	print = calloc(sizeof(char), len + 1);
+	if (!print)
 		return (ERROR);
 	if (check->conversion == 'x')
 		to_hex(num, print, 87);
 	else if (check->conversion == 'X')
 		to_hex(num, print, 55);
 	while (*print)
-    {
-        ft_putchar(print++);
-        rtn++;
-    }
+	{
+		ft_putchar(print++);
+		rtn++;
+	}
 	free(print - rtn);
 	return (rtn);
 }
-

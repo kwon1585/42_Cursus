@@ -6,7 +6,7 @@
 /*   By: dokwon <dokwon@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/26 21:37:51 by dokwon            #+#    #+#             */
-/*   Updated: 2021/07/26 23:13:24 by dokwon           ###   ########.fr       */
+/*   Updated: 2021/08/30 22:46:34 by dokwon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	print_char(va_list ap, t_check *check)
 {
-	char print;
+	char	print;
 
 	print = va_arg(ap, int);
 	if (check->conversion == 'c')

@@ -6,7 +6,7 @@
 /*   By: dokwon <dokwon@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/27 00:00:50 by dokwon            #+#    #+#             */
-/*   Updated: 2021/08/30 18:39:00 by dokwon           ###   ########.fr       */
+/*   Updated: 2021/08/30 22:46:13 by dokwon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,8 @@ int	print_addr(va_list ap, t_check *check)
 	rtn = 0;
 	addr = va_arg(ap, unsigned long long);
 	len = ft_nbrlen(addr, 16);
-	if (!(print = calloc(sizeof(char), len + 3)))
+	print = calloc(sizeof(char), len + 3);
+	if (!print)
 		return (ERROR);
 	*print = '0';
 	*(print + 1) = 'x';

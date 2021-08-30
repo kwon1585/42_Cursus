@@ -6,7 +6,7 @@
 /*   By: dokwon <dokwon@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/30 15:59:03 by dokwon            #+#    #+#             */
-/*   Updated: 2021/08/30 18:03:08 by dokwon           ###   ########.fr       */
+/*   Updated: 2021/08/30 22:47:20 by dokwon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,11 +56,11 @@ int	print_dec(va_list ap, t_check *check)
 		print = get_str_u(ap);
 	else
 		print = get_str_di(ap);
-    while (*print)
-    {
-        rtn += ft_putchar(print);
+	while (*print)
+	{
+		rtn += ft_putchar(print);
 		print++;
-    }
+	}
 	free(print - rtn);
 	return (rtn);
 }
