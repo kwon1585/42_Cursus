@@ -6,7 +6,7 @@
 /*   By: dokwon <dokwon@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/02 03:51:29 by dokwon            #+#    #+#             */
-/*   Updated: 2021/07/27 01:22:45 by dokwon           ###   ########.fr       */
+/*   Updated: 2021/08/30 18:30:03 by dokwon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,12 @@ int	print_hub(va_list ap, t_check *check)
 		rtn = print_str(ap, check);
 	else if (conv == 'p')
 		rtn = print_addr(ap, check);
-	/*
 	else if (conv == 'd' || conv == 'i' || conv == 'u')
 		rtn = print_dec(ap, check);
 	else if (conv == 'x' || conv == 'X')
 		rtn = print_hex(ap, check);
-	*/
+	else if (conv == '%')
+		rtn = ft_putchar(&conv);
 	else
 		rtn = ERROR;
 	return (rtn);

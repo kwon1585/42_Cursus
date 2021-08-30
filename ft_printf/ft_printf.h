@@ -6,7 +6,7 @@
 /*   By: dokwon <dokwon@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/02 04:00:11 by dokwon            #+#    #+#             */
-/*   Updated: 2021/07/28 00:41:44 by dokwon           ###   ########.fr       */
+/*   Updated: 2021/08/30 18:31:03 by dokwon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 
-#define ERROR -1
+# define ERROR -1
 
 typedef struct	s_check
 {
@@ -36,9 +36,14 @@ char	*ft_itoa(unsigned long long n);
 void	init_check(t_check *check);
 char	*check_format(t_check *check, char *format);
 
+void    to_hex(unsigned long long nb, char *print, int is_upper);
+
 int	print_char(va_list ap, t_check *check);
 int	print_str(va_list ap, t_check *check);
 int	print_addr(va_list ap, t_check *check);
+int	print_dec(va_list ap, t_check *check);
+int	print_hex(va_list ap, t_check *check);
+
 
 int	pre_print(va_list ap, char *format);
 int	ft_printf(const char *type, ...);
