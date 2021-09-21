@@ -6,7 +6,7 @@
 /*   By: dokwon <dokwon@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/26 05:37:31 by dokwon            #+#    #+#             */
-/*   Updated: 2021/09/21 17:05:06 by dokwon           ###   ########.fr       */
+/*   Updated: 2021/09/21 21:28:02 by dokwon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	ft_bzero(void *s, size_t n)
 		*((unsigned char *)s + --n) = 0;
 }
 
-void	*ft_calloc(size_t count, size_t size)
+void	*ftt_calloc(size_t count, size_t size)
 {
 	void	*p;
 
